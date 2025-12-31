@@ -1,0 +1,53 @@
+:root{
+  --gap:6px;
+  --square-size:14px;
+  --label-width:96px;
+}
+body{font-family:system-ui,-apple-system,Segoe UI,Roboto,"Helvetica Neue",Arial;margin:20px;background:#fff;color:#111}
+h1{font-size:18px;margin:0 0 12px}
+.summary{margin:8px 0 12px;font-weight:600}
+.tracker{display:flex;flex-direction:column;gap:8px;max-width:100%;overflow:auto}
+.month-row{display:flex;align-items:center}
+.month-label{width:var(--label-width);flex:0 0 var(--label-width);font-size:13px;color:#333}
+.days-wrap{display:flex;flex-wrap:nowrap;gap:var(--gap);overflow:auto;padding-bottom:4px}
+.day-square{width:var(--square-size);height:var(--square-size);background:#eee;border-radius:3px;box-shadow:inset 0 0 0 1px rgba(0,0,0,0.02);cursor:pointer;position:relative}
+.day-square.done{background:var(--done-color,#4caf50)}
+.day-square.not-done{background:#f87171}
+.day-square:hover{filter:brightness(0.95)}
+
+/* Toolbar */
+.toolbar{display:flex;align-items:center;gap:8px;margin:8px 0 14px}
+.toolbar button, .toolbar select{font-size:13px;padding:6px 8px;border-radius:6px;border:1px solid #ddd;background:#fafafa}
+
+/* Theme variables */
+:root{--bg:#ffffff;--fg:#111;--muted:#666;--done-color:#4caf50;--grid-color:rgba(0,0,0,0.06)}
+[data-theme="dark"]{--bg:#0f1720;--fg:#e6eef6;--muted:#9fb0c8;--done-color:#00a86b;--grid-color:rgba(255,255,255,0.06)}
+[data-theme="pastel"]{--bg:#fffaf6;--fg:#2b2b2b;--muted:#7b6f6a;--done-color:#ff9aa2;--grid-color:rgba(0,0,0,0.06)}
+
+body{background:var(--bg);color:var(--fg)}
+.month-label{width:var(--label-width);flex:0 0 var(--label-width);font-size:13px;color:var(--muted)}
+
+/* Week separator: mark week starts (Sunday) with a subtle vertical line */
+.show-week-separators .day-square.week-start{}
+.show-week-separators .day-square.week-start::before{
+  content:'';
+  position:absolute;
+  left:-6px;
+  top:50%;
+  transform:translateY(-50%);
+  width:4px;
+  height:12px;
+  background:var(--sep-color,#3b82f6);
+  border-radius:2px;
+  z-index:2;
+}
+
+/* Checkbox label small adjustments */
+.checkbox-label{display:inline-flex;align-items:center;gap:6px;font-size:13px;color:var(--muted)}
+.checkbox-label input{width:14px;height:14px}
+
+
+/* Responsive: smaller squares on small screens */
+@media (max-width:420px){
+  :root{--square-size:12px;--gap:4px;--label-width:72px}
+}

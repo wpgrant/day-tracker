@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Day Tracker — Last 365 Days</title>
+    <link rel="stylesheet" href="src/styles.css" />
+  </head>
+  <body>
+    <main id="app">
+      <h1>Day Tracker — Last 365 Days</h1>
+
+      <div class="toolbar" role="toolbar" aria-label="Controls">
+        <button id="exportBtn" type="button">Export JSON</button>
+        <button id="importBtn" type="button">Import JSON</button>
+        <input id="importFile" type="file" accept="application/json" style="display:none">
+        <label for="themeSelect">Theme</label>
+        <select id="themeSelect">
+          <option value="default">Default</option>
+          <option value="dark">Dark</option>
+          <option value="pastel">Pastel</option>
+        </select>
+        <label for="showWeekSep" class="checkbox-label">
+          <input id="showWeekSep" type="checkbox"> Show week separators
+        </label>
+        <button id="clearBtn" type="button">Clear All</button>
+      </div>
+    </main>
+    <script src="src/index.js"></script>
+  </body>
+</html>

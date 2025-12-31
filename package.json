@@ -1,0 +1,8 @@
+{
+  "name": "tmp-day-tracker-js",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "start": "node start-server.js"
+  }
+}
