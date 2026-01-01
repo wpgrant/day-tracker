@@ -93,7 +93,6 @@
   const importFile = document.getElementById('importFile');
   const themeSelect = document.getElementById('themeSelect');
   const showWeekSep = document.getElementById('showWeekSep');
-  const clearBtn = document.getElementById('clearBtn');
 
   exportBtn.addEventListener('click', () => exportData());
   importBtn.addEventListener('click', () => importFile.click());
@@ -127,14 +126,6 @@
       document.documentElement.classList.remove('show-week-separators');
       localStorage.removeItem('showWeekSeparators');
     }
-  });
-
-  clearBtn.addEventListener('click', () => {
-    if (!confirm('Clear all saved days?')) return;
-    // remove keys prefixed with 'day-'
-    Object.keys(localStorage).forEach(k => { if (k.startsWith('day-')) localStorage.removeItem(k); });
-    container.querySelectorAll('.day-square').forEach(sq => sq.classList.remove('done'));
-    updateSummary();
   });
 
   function exportData(){

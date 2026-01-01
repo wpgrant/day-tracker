@@ -14,7 +14,6 @@ Features added:
 - Export completed days to JSON (`Export JSON` button)
 - Import completed days from JSON (`Import JSON` button)
 - Theme selector (Default, Dark, Pastel)
-- Clear all saved days (`Clear All`)
 
 JSON import/export format
 ------------------------
